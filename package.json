@@ -1,7 +1,7 @@
 {
   "name": "find-the-cheap-one",
   "version": "0.1.0",
-  "homepage": "https://aMarutaSugiura.github.io/find-the-cheap-one/",
+  "homepage": "https://aMarutaSugiura.github.io/find-the-cheap-one",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
