@@ -1,17 +1,13 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { configureStore, Action } from '@reduxjs/toolkit';
+import { useSelector as rawUseSelector, TypedUseSelectorHook } from 'react-redux';
+import itemListReducer from '../features/itemList/itemListSlice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    itemList: itemListReducer,
   },
 });
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
-export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  RootState,
-  unknown,
-  Action<string>
->;
+export const useSelector: TypedUseSelectorHook<RootState> = rawUseSelector;
