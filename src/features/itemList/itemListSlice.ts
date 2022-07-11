@@ -23,7 +23,7 @@ export const itemListSlice = createSlice({
         addItem: (state, action: PayloadAction<inputItem>) =>{
             const {amount, price} = action.payload;
             if (amount === 0 || price === 0) return;
-            const pricePerAmount = price / amount;
+            const pricePerAmount = Math.round((price / amount) *100) /100;
             state.push({amount, price, pricePerAmount});
         },
         removeItem: (state, action: PayloadAction<listedItem>) =>{

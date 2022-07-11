@@ -11,12 +11,17 @@ export function ItemList() {
     const items = useAppSelector(listedItem);
     return (
         <div>
-            <div>     
-                <input type="number" value={amount !== 0 ? amount : ''} placeholder="量" min="0" onChange={(e) => setAmount(parseInt(e.target.value))} style={{width: '15%', fontSize: '16px', margin: '0 0.5rem'}}></input>
-                <input type="number" value={price !== 0 ? price : ''} placeholder="金額" min="0" onChange={(e)=> setPrice(parseInt(e.target.value))} style={{width: '15%', fontSize: '16px', margin: '0 0.5rem'}}></input>円
-                <input type="submit" onClick={()=>dispatch(addItem({amount, price}))}></input>
+            <div style={{margin: '3rem 0 3rem 0'}}>     
+                <input type="number" value={amount !== 0 ? amount : ''} pattern="[0-9]*" placeholder="量" min="0" onChange={(e) => setAmount(parseInt(e.target.value))} style={{width: '15%', fontSize: '16px', margin: '0 0.5rem'}}></input>/
+                <input type="number" value={price !== 0 ? price : ''} pattern="[0-9]*" placeholder="金額" min="0" onChange={(e)=> setPrice(parseInt(e.target.value))} style={{width: '15%', fontSize: '16px', margin: '0 0.5rem'}}></input>円
+                <input type="submit" onClick={()=>{
+                    dispatch(addItem({amount, price}));
+                    setAmount(0);
+                    setPrice(0);
+                    }
+                    }></input>
             </div>
-            <table style={{border: '1px solid black'}}>
+            <table style={{border: '1px solid black'}} align='center'>
                 <thead style={{borderBottom: '1px solid black'}}>
                 <tr><th style={{width: '30%', borderBottom: '1px solid black'}}>量</th><th style={{width: '30%', borderBottom: '1px solid black'}}>金額</th><th style={{width: '30%', borderBottom: '1px solid black'}}>小さいほど安い</th></tr>
                 </thead>
