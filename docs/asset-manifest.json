@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/find-the-cheap-one/static/css/main.9071bff3.css",
-    "main.js": "/find-the-cheap-one/static/js/main.8609d5d4.js",
+    "main.js": "/find-the-cheap-one/static/js/main.90e22e86.js",
     "static/js/787.e65c97ad.chunk.js": "/find-the-cheap-one/static/js/787.e65c97ad.chunk.js",
     "index.html": "/find-the-cheap-one/index.html",
     "main.9071bff3.css.map": "/find-the-cheap-one/static/css/main.9071bff3.css.map",
-    "main.8609d5d4.js.map": "/find-the-cheap-one/static/js/main.8609d5d4.js.map",
+    "main.90e22e86.js.map": "/find-the-cheap-one/static/js/main.90e22e86.js.map",
     "787.e65c97ad.chunk.js.map": "/find-the-cheap-one/static/js/787.e65c97ad.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9071bff3.css",
-    "static/js/main.8609d5d4.js"
+    "static/js/main.90e22e86.js"
   ]
 }
