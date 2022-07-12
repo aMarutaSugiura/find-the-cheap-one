@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
-import {addItem, listedItem,} from './itemListSlice';
+import {addItem, resetItem, listedItem } from './itemListSlice';
 
 
 export function ItemList() {
@@ -21,14 +21,17 @@ export function ItemList() {
                     }
                     }></input>
             </div>
-            <table style={{border: '1px solid black'}} align='center'>
+            <div　style={{textAlign: 'left'}}>
+                <input type="button" value="リセット" onClick={()=>dispatch(resetItem())} style={{margin: '0 0 0.5rem 1rem'}}></input>
+            </div>
+            <table style={{border: '1px solid black', position: 'relative'}} align='center'>
                 <thead style={{borderBottom: '1px solid black'}}>
                 <tr><th style={{width: '30%', borderBottom: '1px solid black'}}>量</th><th style={{width: '30%', borderBottom: '1px solid black'}}>金額</th><th style={{width: '30%', borderBottom: '1px solid black'}}>小さいほど安い</th></tr>
                 </thead>
                 <tbody>
                 {items.map((item) =>{
                     return(
-                        <tr><td style={{width: '30%'}}>{item.amount}</td> <td style={{width: '30%'}}>{item.price}円</td> <td style={{width: '30%'}}>{item.pricePerAmount}</td></tr>
+                        <tr key={item.id}><td style={{width: '30%'}}>{item.amount}</td><td style={{width: '30%'}}>{item.price}円</td><td style={{width: '30%'}}>{item.pricePerAmount}</td></tr>
                     );
                 })}
                 </tbody>
