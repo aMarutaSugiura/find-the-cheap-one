@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "値段比較",
+  "name": "find-the-cheap-one",
   "icons": [
     {
       "src": "favicon.ico",
